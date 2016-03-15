@@ -17,7 +17,7 @@ unzip(zipFile)
 AMD <- read.csv(csvFile, sep = ',', header = TRUE, stringsAsFactors = FALSE)
 AMD$date <- as.Date(AMD$date)
 ```
-![Alt Text](https://github.com/uwheartbreaker/RepData_PeerAssessment1/blob/master/Figures/Figure1.png)
+![Figure 1](https://github.com/uwheartbreaker/RepData_PeerAssessment1/blob/master/Figures/Figure1.png)
 ## What is mean total number of steps taken per day?
 #### 1. Calculate the total number of steps taken per day
 
