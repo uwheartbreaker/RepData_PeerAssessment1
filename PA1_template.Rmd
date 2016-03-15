@@ -33,6 +33,9 @@ stepsPerDay <- AMD %>%
 ```{r, echo = TRUE}
 hist(stepsPerDay$total, main = 'Total Steps per Day', xlab = 'Number of Steps')
 ```  
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+
 #### 3. Calculate and report the mean and median of the total number of steps taken per day
 
 ```{r, echo = TRUE}
