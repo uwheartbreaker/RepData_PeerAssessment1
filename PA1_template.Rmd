@@ -17,7 +17,7 @@ unzip(zipFile)
 AMD <- read.csv(csvFile, sep = ',', header = TRUE, stringsAsFactors = FALSE)
 AMD$date <- as.Date(AMD$date)
 ```
-![Figure 1](https://github.com/uwheartbreaker/RepData_PeerAssessment1/blob/master/Figures/Figure1.png)
+
 ## What is mean total number of steps taken per day?
 #### 1. Calculate the total number of steps taken per day
 
@@ -33,6 +33,9 @@ stepsPerDay <- AMD %>%
 ```{r, echo = TRUE}
 hist(stepsPerDay$total, main = 'Total Steps per Day', xlab = 'Number of Steps')
 ```  
+
+![Figure 1](https://github.com/uwheartbreaker/RepData_PeerAssessment1/blob/master/Figures/Figure1.png)
+
 
 #### 3. Calculate and report the mean and median of the total number of steps taken per day
 
@@ -52,6 +55,9 @@ stepsPerInterval <- aggregate(steps ~ interval, data = AMD, FUN = mean)
                       plot(x = stepsPerInterval$interval, y = stepsPerInterval$steps, type = 'l',
                       main = 'Avg Number of Steps Across All Days', xlab = 'Steps', ylab = 'Interval')
 ```
+
+![Figure 2](https://github.com/uwheartbreaker/RepData_PeerAssessment1/blob/master/Figures/Figure2.png)
+
 
 #### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -95,6 +101,8 @@ round(mean(stepsPerDay_Adj$total))
 round(median(stepsPerDay_Adj$total))
 ```
 
+![Figure 3](https://github.com/uwheartbreaker/RepData_PeerAssessment1/blob/master/Figures/Figure3.png)
+
 ## Are there differences in activity patterns between weekdays and weekends
 #### 1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
 
@@ -111,3 +119,5 @@ AMD_Weekday <- aggregate(stepsAdj ~ interval + weekdays, AMD_Adj, mean)
 xyplot(stepsAdj ~ interval | weekdays, AMD_Weekday, type = 'l', layout = c(1, 2), 
        xlab = "Interval", ylab = "Number of steps")
 ```
+
+![Figure 4](https://github.com/uwheartbreaker/RepData_PeerAssessment1/blob/master/Figures/Figure4.png)
